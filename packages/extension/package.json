@@ -1,0 +1,84 @@
+{
+  "name": "rename-replace-extension",
+  "displayName": "Rename / Replace",
+  "description": "Rename files & folders recursively and replace their content while preserving the original casing.",
+  "icon": "images/icon.png",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publisher": "wassim-k",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wassim-k/rename-replace.git"
+  },
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "rename",
+    "replace",
+    "batch",
+    "duplicate",
+    "refactor",
+    "angular",
+    "react",
+    "path",
+    "directory",
+    "folder",
+    "file"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rename-replace.open",
+        "title": "Rename / Replace...",
+        "icon": "./images/icon.png"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "rename-replace.open",
+          "when": "false"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "rename-replace.open",
+          "group": "7_modification"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Rename / Replace",
+      "properties": {
+        "rename-replace.exclude": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            ".cache"
+          ],
+          "description": "List of folders or files to exclude."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "rename-replace": "0.1.0"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist .cache",
+    "lint": "eslint src --ext ts",
+    "esbuild": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "build": "yarn clean && yarn esbuild && yarn build:webview",
+    "vscode:prepublish": "yarn build",
+    "build:webview": "yarn workspace webview-ui build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.2"
+  }
+}

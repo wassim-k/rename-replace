@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "es2021",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"rootDir": "./",
+		"outDir": "dist",
+		"skipLibCheck": true,
+		"strict": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitThis": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"exclude": [
+		"node_modules",
+		"**/dist"
+	]
+}

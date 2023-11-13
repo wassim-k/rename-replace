@@ -1,0 +1,5 @@
+**
+!LICENSE
+!images/*
+!dist/**
+!webview-ui/dist/**

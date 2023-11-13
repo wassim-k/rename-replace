@@ -1,0 +1,43 @@
+{
+  "name": "webview-ui",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --output-hashing=none",
+    "build:dev": "ng build --configuration development",
+    "watch": "ng build --watch --configuration development",
+    "clean": "rimraf ./dist"
+  },
+  "workspaces": {
+    "nohoist": [
+      "**/@angular/*"
+    ]
+  },
+  "dependencies": {
+    "@angular/animations": "^17.0.1",
+    "@angular/common": "^17.0.1",
+    "@angular/compiler": "^17.0.1",
+    "@angular/core": "^17.0.1",
+    "@angular/forms": "^17.0.1",
+    "@angular/platform-browser": "^17.0.1",
+    "@angular/platform-browser-dynamic": "^17.0.1",
+    "@angular/router": "^17.0.1",
+    "@vscode/codicons": "^0.0.35",
+    "@vscode/webview-ui-toolkit": "^1.2.2",
+    "rename-replace": "0.1.0",
+    "rxjs": "~7.8.1",
+    "tailwindcss": "^3.3.5",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "~17.0.0",
+    "@angular/compiler-cli": "^17.0.1",
+    "@types/vscode-webview": "^1.57.4",
+    "typescript": "~5.2.2"
+  }
+}

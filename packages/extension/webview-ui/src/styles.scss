@@ -1,0 +1,38 @@
+@forward '@vscode/codicons/dist/codicon.css';
+
+@tailwind components;
+@tailwind utilities;
+
+.error {
+    border: 1px solid var(--vscode-inputValidation-errorBorder);
+    background: var(--vscode-inputValidation-errorBackground);
+    padding: 0.5em;
+    font-size: 0.9rem;
+
+    &-icon {
+        color: var(--vscode-inputValidation-errorBorder);
+        font-size: 1.5rem !important;
+    }
+}
+
+.warning {
+    border: 1px solid var(--vscode-inputValidation-warningBorder);
+    background: var(--vscode-inputValidation-warningBackground);
+    padding: 0.5em;
+    font-size: 0.9rem;
+
+    &-icon {
+        color: var(--vscode-inputValidation-warningBorder);
+        font-size: 1.5rem !important;
+    }
+}
+
+.warning-simple {
+    color: var(--vscode-inputValidation-warningBorder);
+    font-size: 0.9rem;
+
+    &-icon {
+        color: var(--vscode-inputValidation-warningBorder);
+        font-size: 1.5rem !important;
+    }
+}

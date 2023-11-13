@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/extension/webview-ui"
+    ],
+    "nohoist": [
+      "**/@vscode/codicons"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -b && yarn workspace rename-replace-extension build",
+    "build:webview": "yarn workspace webview-ui build",
+    "clean": "yarn workspaces run clean",
+    "watch": "yarn build:webview && tsc -b --watch",
+    "lint": "eslint packages/**/*.ts",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  }
+}
