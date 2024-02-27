@@ -3,7 +3,7 @@
   "displayName": "Rename / Replace",
   "description": "Rename files & folders recursively and replace their content while preserving the original casing.",
   "icon": "images/icon.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "publisher": "wassim-k",
   "repository": {
@@ -68,7 +68,7 @@
     }
   },
   "dependencies": {
-    "rename-replace": "0.1.0"
+    "rename-replace": "0.1.1"
   },
   "scripts": {
     "clean": "rimraf ./dist .cache",

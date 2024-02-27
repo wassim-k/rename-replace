@@ -40,3 +40,5 @@ For the same functionality outside of VSCode, you can use the [CLI tool](https:/
 ```bash
 npx rename-replace -h
 ```
+
+> ⚠️ There are instances when VSCode may lock files, leading to the extension timing out with an error after several attempts. If you encounter this issue, it's recommended to close VSCode and use the CLI tool directly from the command line as an alternative solution.

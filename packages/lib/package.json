@@ -1,6 +1,6 @@
 {
   "name": "rename-replace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rename files & folders recursively and replace their content while preserving their original casing.",
   "license": "MIT",
   "publisher": "wassim-k",

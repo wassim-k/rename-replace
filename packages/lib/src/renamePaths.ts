@@ -7,9 +7,7 @@ import { hasTarget } from './targets';
 import { RenamePath, Replacement, Target } from './types';
 
 export async function renamePaths(paths: Array<RenamePath>, replacements: Array<Replacement>): Promise<void> {
-    for (const { path, skip } of paths.filter(f => hasTarget(f.target, Target.Content))) {
-        if (skip) continue;
-
+    for (const { path } of paths.filter(f => hasTarget(f.target, Target.Content))) {
         const fileContent = await fs.readFile(path, 'utf8');
         await fs.writeFile(path, replace(fileContent, replacements));
     }
