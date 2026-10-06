@@ -84,6 +84,12 @@ export class MainPanel {
 
     const nonce = getNonce();
 
+    const state = JSON.stringify({
+      currentPath: this.currentPath,
+      currentPathType: fs.statSync(this.currentPath).isDirectory() ? 'folder' : 'file',
+      currentPathBaseName: path.basename(this.currentPath)
+    }).replaceAll('<', '\\u003c');
+
     return /*html*/ `
       <!DOCTYPE html>
       <html lang="en">
@@ -96,9 +102,7 @@ export class MainPanel {
         </head>
         <body>
           <script type="module" nonce="${nonce}">
-            window.currentPath = '${this.currentPath.replaceAll('\\', '\\\\')}';
-            window.currentPathType = '${fs.statSync(this.currentPath).isDirectory() ? 'folder' : 'file'}';
-            window.currentPathBaseName = '${path.basename(this.currentPath)}';
+            Object.assign(window, ${state});
           </script>
           <app-root></app-root>
           <script type="module" nonce="${nonce}" src="${runtimeUri}"></script>

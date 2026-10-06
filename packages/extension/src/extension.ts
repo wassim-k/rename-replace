@@ -6,7 +6,11 @@ export function activate(context: ExtensionContext) {
 	context.subscriptions.push(
 		commands.registerCommand(
 			'rename-replace.open',
-			(selectedFile: Uri) => MainPanel.render(context.extensionPath, context.extensionUri, selectedFile, buildConfiguration()))
+			(selectedFile: Uri | undefined) => {
+				if (selectedFile) {
+					MainPanel.render(context.extensionPath, context.extensionUri, selectedFile, buildConfiguration());
+				}
+			})
 	);
 
 	context.subscriptions.push(workspace.onDidChangeConfiguration(() => {
